@@ -360,4 +360,24 @@ MigrationBackup/
 .ionide/
 
 # Fody - auto-generated XML schema
-FodyWeavers.xsd
+FodyWeavers.xsd# Angular / Node
+node_modules/
+dist/
+.angular/
+
+# Visual Studio / ASP.NET
+bin/
+obj/
+.vs/
+*.user
+*.suo
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# Sistema
+.DS_Store
+Thumbs.db
