@@ -1,0 +1,175 @@
+<section class="productos-page">
+
+  <div class="encabezado">
+    <h2>Administración de Álbumes</h2>
+    <p>Agrega, edita, elimina y consulta productos desde la API.</p>
+  </div>
+
+  <div class="alerta exito" *ngIf="mensaje">
+    {{ mensaje }}
+  </div>
+
+  <div class="alerta error" *ngIf="error">
+    {{ error }}
+  </div>
+
+  <!-- FORMULARIO GÉNERO -->
+  <section class="panel">
+    <h3>Agregar categoría / género</h3>
+
+    <div class="form-genero">
+      <input
+        type="text"
+        placeholder="Ejemplo: Rock, Pop, Jazz..."
+        [(ngModel)]="nuevoGenero.nombre"
+      >
+
+      <button (click)="guardarGenero()">Agregar género</button>
+    </div>
+  </section>
+
+  <!-- FORMULARIO ÁLBUM -->
+  <section class="panel">
+    <h3>{{ editando ? 'Editar álbum' : 'Agregar nuevo álbum' }}</h3>
+
+    <div class="formulario">
+
+      <div class="campo">
+        <label>Título del álbum</label>
+        <input type="text" [(ngModel)]="albumFormulario.titulo">
+      </div>
+
+      <div class="campo">
+        <label>Artista</label>
+        <input type="text" [(ngModel)]="albumFormulario.artista">
+      </div>
+
+      <div class="campo">
+        <label>Año de lanzamiento</label>
+        <input type="number" [(ngModel)]="albumFormulario.anioLanzamiento">
+      </div>
+
+      <div class="campo">
+        <label>Disquera</label>
+        <input type="text" [(ngModel)]="albumFormulario.disquera">
+      </div>
+
+      <div class="campo">
+        <label>Precio</label>
+        <input type="number" [(ngModel)]="albumFormulario.precio">
+      </div>
+
+      <div class="campo">
+        <label>Imagen URL</label>
+        <input type="text" [(ngModel)]="albumFormulario.imagen">
+      </div>
+
+      <div class="campo campo-completo">
+        <label>Descripción</label>
+        <textarea rows="3" [(ngModel)]="albumFormulario.descripcion"></textarea>
+      </div>
+
+      <div class="campo">
+        <label>Categoría / género</label>
+        <select [(ngModel)]="albumFormulario.generoId">
+        <option [ngValue]="0">Selecciona un género</option>
+
+        <option *ngFor="let genero of generos" [ngValue]="genero.id">
+          {{ genero.nombre }}
+        </option>
+      </select>
+      </div>
+
+    </div>
+
+    <div class="acciones-form">
+      <button class="btn-guardar" (click)="guardarAlbum()">
+        {{ editando ? 'Actualizar álbum' : 'Guardar álbum' }}
+      </button>
+
+      <button class="btn-cancelar" *ngIf="editando" (click)="limpiarFormulario()">
+        Cancelar edición
+      </button>
+    </div>
+  </section>
+
+  <!-- FILTROS -->
+  <section class="zona-filtros">
+    <div class="campo-busqueda">
+      <label>Buscar producto</label>
+      <input
+        type="text"
+        placeholder="Buscar por título o artista..."
+        [(ngModel)]="textoBusqueda"
+        (input)="filtrarProductos()"
+      >
+    </div>
+
+    <div class="campo-categoria">
+      <label>Filtrar por categoría</label>
+      <select [(ngModel)]="generoSeleccionado" (change)="filtrarProductos()">
+        <option value="">Todas las categorías</option>
+
+        <option *ngFor="let genero of generos" [value]="genero.id">
+          {{ genero.nombre }}
+        </option>
+      </select>
+    </div>
+
+    <button class="btn-limpiar" (click)="limpiarFiltros()">Limpiar</button>
+  </section>
+
+  <div class="mensaje" *ngIf="cargando">
+    Cargando productos desde la API...
+  </div>
+
+  <div class="mensaje" *ngIf="!cargando && albumesFiltrados.length === 0">
+    No hay productos registrados todavía.
+  </div>
+
+  <!-- GALERÍA -->
+  <div class="grid-productos" *ngIf="!cargando && albumesFiltrados.length > 0">
+
+    <article class="producto-card" *ngFor="let album of albumesFiltrados">
+
+      <img
+        [src]="album.imagen || 'https://placehold.co/500x350?text=Album'"
+        [alt]="album.titulo"
+      >
+
+      <div class="info-producto">
+        <span class="categoria">
+          {{ album.genero?.nombre || 'Sin categoría' }}
+        </span>
+
+        <h3>{{ album.titulo }}</h3>
+
+        <p class="artista">{{ album.artista }}</p>
+
+        <p class="descripcion">
+          {{ album.descripcion || 'Álbum musical disponible en tienda.' }}
+        </p>
+
+        <div class="detalles">
+          <span>Año: {{ album.anioLanzamiento }}</span>
+          <span>{{ album.disquera }}</span>
+        </div>
+
+        <p class="precio">${{ album.precio }}</p>
+
+        <div class="acciones-card">
+          <button class="btn-editar" (click)="editarAlbum(album)">
+            Editar
+          </button>
+
+          <button class="btn-eliminar" (click)="eliminarAlbum(album.id)">
+            Eliminar
+          </button>
+        </div>
+      </div>
+
+    </article>
+
+  </div>
+
+</section>

@@ -1,0 +1,63 @@
+<section class="banner">
+  <div class="banner-contenido">
+    <span class="etiqueta">Nueva colección musical</span>
+
+    <h2>Encuentra tus álbumes favoritos en Music Store</h2>
+
+    <p>
+      Descubre álbumes de distintos géneros, artistas destacados y música para todos los gustos.
+      Compra, explora y disfruta una experiencia musical moderna.
+    </p>
+
+    <div class="acciones">
+      <a routerLink="/productos" class="btn-principal">Ver productos</a>
+      <a routerLink="/contacto" class="btn-secundario">Contáctanos</a>
+    </div>
+  </div>
+
+  <div class="banner-imagen">
+    <img
+      src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=900&q=80"
+      alt="Banner de música"
+    >
+  </div>
+</section>
+
+<section class="empresa">
+  <h2>Sobre nuestra tienda</h2>
+
+  <p>
+    Music Store es una empresa dedicada a la venta de álbumes musicales.
+    Ofrecemos productos de diferentes géneros como rock, pop, jazz, electrónica y música clásica.
+  </p>
+</section>
+
+<section class="productos-destacados">
+  <div class="titulo-seccion">
+    <h2>Productos principales</h2>
+    <p>Algunos álbumes destacados de nuestra tienda</p>
+  </div>
+
+  <div class="grid-productos">
+    <article class="producto-card" *ngFor="let producto of productosMuestra">
+      <img [src]="producto.imagen" [alt]="producto.titulo">
+
+      <div class="producto-info">
+        <span class="genero">{{ producto.genero }}</span>
+
+        <h3>{{ producto.titulo }}</h3>
+
+        <p class="artista">{{ producto.artista }}</p>
+
+        <p class="descripcion">
+          Álbum musical recomendado para los amantes de la buena música.
+        </p>
+
+        <div class="producto-footer">
+          <strong>${{ producto.precio }}</strong>
+          <a routerLink="/productos">Ver más</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>

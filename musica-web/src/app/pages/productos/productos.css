@@ -1,0 +1,303 @@
+.productos-page {
+  min-height: 75vh;
+  padding: 45px 8%;
+  background: #f5f2f8;
+}
+
+.encabezado {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.encabezado h2 {
+  font-size: 38px;
+  color: #171717;
+  margin-bottom: 8px;
+}
+
+.encabezado p {
+  color: #666;
+  font-size: 17px;
+}
+
+.panel {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+.panel h3 {
+  color: #4b1979;
+  margin-top: 0;
+}
+
+.form-genero {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.form-genero input {
+  flex: 1;
+  min-width: 250px;
+  padding: 13px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+}
+
+.form-genero button {
+  border: none;
+  background: #4b1979;
+  color: white;
+  padding: 13px 22px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.formulario {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.campo label {
+  font-weight: bold;
+  color: #333;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  padding: 13px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  outline: none;
+  font-size: 15px;
+}
+
+.campo-completo {
+  grid-column: span 2;
+}
+
+.acciones-form {
+  margin-top: 22px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-guardar,
+.btn-cancelar {
+  border: none;
+  padding: 13px 22px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-guardar {
+  background: #1b7f4c;
+  color: white;
+}
+
+.btn-cancelar {
+  background: #777;
+  color: white;
+}
+
+.zona-filtros {
+  background: linear-gradient(135deg, #d8c2ff, #eee1ff);
+  padding: 25px;
+  border-radius: 20px;
+  display: flex;
+  gap: 18px;
+  align-items: end;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.campo-busqueda,
+.campo-categoria {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.campo-busqueda label,
+.campo-categoria label {
+  font-weight: bold;
+  color: #3d155f;
+}
+
+.campo-busqueda input,
+.campo-categoria select {
+  width: 280px;
+  padding: 13px;
+  border: none;
+  border-radius: 12px;
+  outline: none;
+  font-size: 15px;
+}
+
+.btn-limpiar {
+  border: none;
+  background: #3d155f;
+  color: white;
+  padding: 13px 23px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+.producto-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+}
+
+.producto-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+}
+
+.info-producto {
+  padding: 20px;
+}
+
+.categoria {
+  display: inline-block;
+  background: #eee1ff;
+  color: #4b1979;
+  padding: 6px 13px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.info-producto h3 {
+  color: #171717;
+  font-size: 23px;
+  margin: 15px 0 5px;
+}
+
+.artista {
+  color: #4b1979;
+  font-weight: bold;
+  margin: 0 0 10px;
+}
+
+.descripcion {
+  color: #666;
+  line-height: 1.5;
+}
+
+.detalles {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.detalles span {
+  background: #f1f1f1;
+  color: #444;
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+.precio {
+  margin-top: 15px;
+  font-size: 24px;
+  color: #1b7f4c;
+  font-weight: bold;
+}
+
+.acciones-card {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.acciones-card button {
+  flex: 1;
+  border: none;
+  padding: 11px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-editar {
+  background: #315bbd;
+}
+
+.btn-eliminar {
+  background: #b3261e;
+}
+
+.alerta {
+  padding: 14px 18px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.exito {
+  background: #d8f3dc;
+  color: #1b7f4c;
+}
+
+.error {
+  background: #ffd7d7;
+  color: #9b1c1c;
+}
+
+.mensaje {
+  text-align: center;
+  padding: 35px;
+  color: #555;
+  font-size: 19px;
+}
+
+@media (max-width: 750px) {
+  .formulario {
+    grid-template-columns: 1fr;
+  }
+
+  .campo-completo {
+    grid-column: span 1;
+  }
+
+  .campo-busqueda input,
+  .campo-categoria select {
+    width: 100%;
+  }
+
+  .campo-busqueda,
+  .campo-categoria,
+  .btn-limpiar {
+    width: 100%;
+  }
+}

@@ -1,0 +1,199 @@
+.banner {
+  min-height: 430px;
+  padding: 50px 8%;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 35px;
+  align-items: center;
+  background: linear-gradient(135deg, #171717, #4b1979, #7d3cff);
+  color: white;
+}
+
+.banner-contenido {
+  max-width: 650px;
+}
+
+.etiqueta {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.18);
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+
+.banner h2 {
+  font-size: 48px;
+  line-height: 1.1;
+  margin: 0 0 18px;
+}
+
+.banner p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #f1eaff;
+}
+
+.acciones {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.acciones a {
+  text-decoration: none;
+  padding: 13px 24px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.btn-principal {
+  background: white;
+  color: #4b1979;
+}
+
+.btn-secundario {
+  border: 2px solid white;
+  color: white;
+}
+
+.banner-imagen img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 25px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+}
+
+.empresa {
+  padding: 45px 8%;
+  background: white;
+  text-align: center;
+}
+
+.empresa h2 {
+  font-size: 34px;
+  color: #4b1979;
+  margin-bottom: 10px;
+}
+
+.empresa p {
+  max-width: 850px;
+  margin: auto;
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.productos-destacados {
+  padding: 45px 8%;
+  background: #f5f2f8;
+}
+
+.titulo-seccion {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.titulo-seccion h2 {
+  font-size: 36px;
+  color: #171717;
+  margin-bottom: 5px;
+}
+
+.titulo-seccion p {
+  color: #666;
+}
+
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+.producto-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.14);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.producto-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+}
+
+.producto-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.producto-info {
+  padding: 20px;
+}
+
+.genero {
+  display: inline-block;
+  background: #eee1ff;
+  color: #4b1979;
+  padding: 6px 13px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.producto-info h3 {
+  font-size: 23px;
+  margin: 15px 0 5px;
+  color: #171717;
+}
+
+.artista {
+  font-weight: bold;
+  color: #4b1979;
+  margin: 0 0 10px;
+}
+
+.descripcion {
+  color: #666;
+  line-height: 1.5;
+}
+
+.producto-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.producto-footer strong {
+  font-size: 22px;
+  color: #1b7f4c;
+}
+
+.producto-footer a {
+  text-decoration: none;
+  background: #4b1979;
+  color: white;
+  padding: 9px 15px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+@media (max-width: 850px) {
+  .banner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .acciones {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .banner h2 {
+    font-size: 36px;
+  }
+}
